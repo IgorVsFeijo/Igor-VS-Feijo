@@ -1,0 +1,6 @@
+#tela{
+    background-color: white;
+    border: 3px solid rgba(0, 0, 0, 0.534);
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.397);
+}
