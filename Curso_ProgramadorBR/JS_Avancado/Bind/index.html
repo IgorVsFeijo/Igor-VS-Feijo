@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="number" id="n1">
+    <input type="number" id="n2">
+    <input type="submit" id="b">
+
+    <p>Nota 1: </p>
+    <p>Nota2: </p>
+    <p>Media: </p>
+
+    <script>
+
+        function calcMedia() {
+            media = (this.n1 + this.n2 * 2)/3
+            return media.toFixed(2)
+        }
+
+        function aluno(nota1, nota2){
+            this.n1 = nota1
+            this.n2 = nota2
+            this.media = calcMedia
+        }
+
+        let joao = new aluno(8, 10)
+        let kim = new aluno(5, 9)
+        let pam = new aluno(10, 5)
+
+        console.log(joao.media())
+
+        document.getElementById("b").onclick = ()=>{
+            let n1 =  Number(document.getElementById("n1").value)
+            let n2 = Number(document.getElementById("n2").value)
+            let media = calcMedia.bind(new aluno(n1, n2))
+
+            let selector = document.querySelectorAll("#b ~ p")
+            
+            console.log(selector)
+
+            selector[0].innerHTML = `Nota 1: ${n1}`
+            selector[1].innerHTML = `Nota 2: ${n2}`
+            selector[2].innerHTML = `Media: ${media()}`
+
+        }
+
+    </script>
+</body>
+</html>

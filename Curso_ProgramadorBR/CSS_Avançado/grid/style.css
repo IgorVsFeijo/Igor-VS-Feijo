@@ -1,0 +1,167 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(224, 182, 189);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+[class ^= "container"]{
+    border: 1px solid rgba(0, 0, 0, 0.164);
+    background-color: palevioletred;
+    padding: 30px;
+    max-width: 700px;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 30px;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.596);
+}
+
+h1::first-letter{
+    font-size: 2em;
+}
+
+p::first-line{
+    color: skyblue;
+}
+
+li{
+    list-style: none;
+}
+
+li::before/*, li::after*/{
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0px 5px;
+    background-image: url(star.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div *::selection{
+    background-color: white;
+    color: palevioletred;
+}
+
+.rect{
+    margin: 0;
+    padding: 0;
+}
+
+.r1{
+    background-color: skyblue;
+}
+
+.r2{
+    background-color: palegoldenrod;
+}
+
+.r3{
+    background-color: palegreen;
+}
+
+.aula{
+    max-width: 450px;
+    background-color: rgb(134, 41, 57);
+    border: 1px solid rgba(0, 0, 0, 0.164);
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.596);
+    transform-origin:top;
+    scale: 0.8;
+}
+
+/* Conteudo aula Grid Template*/
+
+[class ^= "container"]{
+    display:grid; /*Define que essa div vai ter seu conteudo organizado por uma grid*/
+}
+
+
+.container-1{
+    grid-template-rows: auto auto; /*Define qual o tamanho das linhas da grid, que devem ser declaradas uma a uma*/
+    grid-template-columns: auto auto auto; /*Define qual o tamanho das colunas da grid, também declaradas uma a uma*/
+
+    /* ao utilizar o auto, os elementos vão se adaptar ao tamanho da tela*/
+}
+
+.container-2{
+    grid-template-rows: 30px 50px;
+    grid-template-columns: 90px 120px 150px;
+
+    /* Podemos declarar com tamanhos fixos */
+}
+
+.container-3{
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 10% 20% 70%;
+
+    /* Podemos declarar com uma porcentagem relativa ao elemento pai */
+}
+
+.container-4{
+    grid-template-rows: 1fr 5fr;
+    grid-template-columns: 5fr 2fr 1fr;
+
+    /* fr é uma unidade exclusiva do display grid, podemos le-la como uma fração*/
+
+}
+
+/* Conteudo aula Gap Grid */
+
+.gap div{
+    /* column-gap: 5px;
+    row-gap: 5px; */
+
+    gap: 5px;
+}
+
+/* Conteudo aula Justify Items e Align Items */
+
+div.gap ~ div > [class *= "container"]{
+    min-width: 400px;
+    grid-template: 1fr 1fr / 1fr 1fr 1fr;
+    gap: 5px;
+}
+
+.justifyItems .rect{
+    width: 50px;
+}
+
+h3{
+    text-align: center;
+}
+
+.justifyItems .container-1{
+    justify-items: flex-end;
+}
+
+.justifyItems .container-2{
+    justify-items: center;
+}
+
+.alignItems [class *= "container"]{
+    min-height: 150px;
+}
+
+.alignItems .rect{
+    height: 20px;
+}
+
+.alignItems .container-1{
+    align-items: flex-end;
+}
+
+.alignItems .container-2{
+    align-items: center;
+}
+

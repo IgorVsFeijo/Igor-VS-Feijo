@@ -1,0 +1,97 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(224, 182, 189);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+}
+
+div{
+    border: 1px solid rgba(0, 0, 0, 0.164);
+    background-color: palevioletred;
+    padding: 30px;
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+    border-radius: 30px;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.596);
+}
+
+div *{
+    margin-bottom: 20px;
+}
+
+input{
+    line-height: 2.5em;
+    max-width: 300px;
+    border-radius: 30px;
+    border: 0;
+    padding: 5px 20px;
+}
+
+table{
+    margin-top: 30px;
+    background-color: pink;
+    padding: 10px;
+    text-align: center;
+}
+
+tr{
+    background-color: white;
+    color: palevioletred;
+}
+
+td{
+    padding: 10px;
+}
+
+/*Aula sobre pseudoclasses*/
+
+input:focus{
+    color: palevioletred;
+    border: 1px solid rgb(141, 20, 60);
+    outline: 1px solid rgb(158, 38, 78);
+    box-shadow: none;
+}
+
+li:first-child{ /*Modifica o li, caso ele seja o primeiro filho do elemento acima*/
+    color: skyblue;
+}
+
+li:first-of-type{ /*Modifica o primeiro elemento li da lista de elementos filhos*/
+    background-color: rgba(255, 255, 255, 0.411);
+}
+
+li:nth-child(3){ /*Modifica o li, caso ele seja o terceiro elemento da lista de elementos filhos*/
+    color: palegoldenrod;
+}
+
+li:nth-of-type(3){ /*O terceito elemento li da lista de elementos filhos*/
+    font-style: italic;
+}
+
+li:nth-last-child(2) /*Modifica o li caso ele seja o penultimo elemento da lista de elementos filhos*/{
+    color: purple;
+}
+
+li:nth-last-of-type(3) /*Modifica o antepenultimo li*/
+{
+    color: darkslategrey;
+}
+
+li:last-child{ /*Modifica o li caso ele seja o ultimo*/
+    color: chartreuse;
+}
+
+tr:nth-child(2n){ /*Pega todos os elementos li cuja posição seja divisivel por 2*/
+    background-color: whitesmoke;
+}
+
+
+
+

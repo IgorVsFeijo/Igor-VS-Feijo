@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            transform: scale(2.5);
+            transform-origin: left;
+            margin: 50px;
+        }
+
+        input{
+            width: 30px;
+            height: 20px;
+        }
+
+        #base{
+            font-size: 0.4em;
+            width: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        log 
+        <sub>
+            <input type="Number" id="base">
+        </sub> 
+        <input type="Number" id="argument">
+         =
+        <span id="result"></span>
+    </h1>
+
+    <script>
+
+        document.querySelectorAll("[type = 'Number']").forEach((e)=>{
+            e.addEventListener("change", ()=>{
+            let base = Number(document.getElementById("base").value)
+            let argument = Number(document.getElementById("argument").value)
+
+            if (base == 0) base = 10
+
+            result = () => Math.log(argument)/Math.log(base) 
+            document.getElementById("result").innerHTML = result()
+        })
+        })
+        
+
+    </script>
+</body>
+</html>
