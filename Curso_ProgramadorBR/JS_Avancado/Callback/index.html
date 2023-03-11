@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 2em;
+        }
+
+        input, select{
+            font-size: 1em;
+            max-width: 50px;
+        }
+
+        [type="submit"]{
+            font-size: 0.4em;
+            max-width: none;
+        }
+    </style>
+    <title>Callback</title>
+</head>
+<body>
+    <div>
+        <input type="Number" id="n1">
+        <select name="op" id="op">
+            <option value="soma" selected>+</option>
+            <option value="sub">-</option>
+            <option value="mult">*</option>
+            <option value="div">/</option>
+        </select>
+        <input type="Number" id="n2">
+        = <span id="result"></span>
+    </div>
+    <div>
+        <input type="submit" value="Calcular">
+    </div>
+
+    <script>
+    </script>
+</body>
+</html>

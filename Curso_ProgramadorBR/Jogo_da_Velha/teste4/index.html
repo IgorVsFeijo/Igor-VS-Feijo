@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #square{
+            width: 300px;
+            height: 300px;
+            margin: auto;
+            background-color: palevioletred;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.527);
+        }
+
+        .teste{
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+
+        .teste::after{
+            font-size: 100pt;
+            line-height: 300px;
+        }
+
+        .emote1::after{
+            content: "✌️";
+        }
+
+        .emote2::after{
+            content: "🤦‍♀️";
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="square"></div>
+</body>
+<script>
+    let square = document.getElementById("square")
+    let currentEmote = 1
+
+    square.addEventListener("click", (e)=>{
+        square.innerHTML = `<div class="teste emote${currentEmote}"></div>`
+        currentEmote == 1 ? currentEmote = 2 : currentEmote = 1
+        console.log(document.body)
+    })
+</script>
+</html>
